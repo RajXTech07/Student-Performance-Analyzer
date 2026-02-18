@@ -86,7 +86,7 @@ This project helped me:
 
 ## 👨‍💻 Author
 
-Raj Kumar|
+Raj Kumar |
 First Year B.Tech Student | Aspiring AI & ML Student
 
 ---
