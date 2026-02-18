@@ -60,7 +60,6 @@ student-performance-analyzer/
 ├── requirements.txt
 └── README.md
 
-The dashboard will open in your browser.
 ```
 
 ---
