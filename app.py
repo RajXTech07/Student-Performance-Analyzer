@@ -33,9 +33,9 @@ if st.button("Predict Performance"):
     st.write(f"Grade: {student_grade}")
 
 
-#if st.button("Model Performance"): 
-    #st.subheader("Model Performance")
-    #st.write("R-squared Score:", get_model_performance())
+if st.button("Model Performance"): 
+    st.subheader("Model Performance")
+    st.write("R-squared Score:", get_model_performance())
 
 if st.button("Show Animated Grade Chart"):
 
