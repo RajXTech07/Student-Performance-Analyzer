@@ -61,7 +61,9 @@ student-performance-analyzer/
 └── README.md
 
 The dashboard will open in your browser.
+```
 
+---
 ## 🎯 Learning Outcome
 
 This project helped me:
