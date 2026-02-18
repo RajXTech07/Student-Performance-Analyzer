@@ -32,11 +32,7 @@ if st.button("Predict Performance"):
     st.write(f"Predicted Performance Index: {result}")
     st.write(f"Grade: {student_grade}")
 
-
-if st.button("Model Performance"): 
-    st.subheader("Model Performance")
-    st.write("R-squared Score:", get_model_performance())
-
+# Plotting Graph using Plotly
 if st.button("Show Animated Grade Chart"):
 
     st.subheader("📊 Animated Grade Distribution")
@@ -64,3 +60,8 @@ if st.button("Show Animated Grade Chart"):
 
     st.plotly_chart(fig, use_container_width=True)
 
+
+# for model performance...
+if st.button("Model Performance"): 
+    st.subheader("Model Performance")
+    st.write("Performance Score:", get_model_performance())
