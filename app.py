@@ -6,7 +6,7 @@ from model import predict_performance, grade, get_model_performance
 from mpl_toolkits.mplot3d import Axes3D
 import plotly.express as px
 
-df = pd.read_csv('studentPerformance.csv')
+df = pd.read_csv('data/dataset.csv')
 df["Grade"] = df["Performance Index"].apply(grade)
 
 st.set_page_config(page_title="Student Performance Analyzer", layout="wide")

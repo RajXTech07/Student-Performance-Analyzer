@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('studentPerformance.csv')
+df = pd.read_csv('data/dataset.csv')
 df["Extracurricular Activities"] = df["Extracurricular Activities"].map({"Yes": 1, "No": 0})
 
 x = df[["Hours Studied",

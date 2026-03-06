@@ -58,7 +58,7 @@ student-performance-analyzer/
 ├── model.py               # Linear Regression model logic
 ├── data/
 │   ├── readme.md                  # Dataset description
-│   └──StudentPerformance.csv      # Dataset
+│   └──dataset.csv                 # Student Performance Dataset
 │
 ├── notebooks/
 │     │
