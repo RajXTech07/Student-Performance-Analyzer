@@ -9,28 +9,51 @@ import plotly.express as px
 df = pd.read_csv('studentPerformance.csv')
 df["Grade"] = df["Performance Index"].apply(grade)
 
-st.title("STUDENT PERFORMANCE ANALYZER🧑‍🎓💯")
-st.write("This app predicts student performance based on acedamic details and activities.")
+st.set_page_config(page_title="Student Performance Analyzer", layout="wide")
 
-st.sidebar.subheader("Academic Details")
+st.title("🎓 Student Performance Analyzer")
+st.markdown(
+"""
+Predict a student's **Performance Index** using a Linear Regression model built from scratch.
 
-Hours_Studied = st.sidebar.slider("Hours Studied", 1, 9, 0)
-prev_scores = st.sidebar.slider("Previous scores", 40, 100, 0)
-sleep = st.sidebar.slider("Sleep Hours", 4, 9, 0)
-papers = st.sidebar.slider("Sample Questions Practiced", 0, 9, 0)
+Fill in the student details below and click **Predict Performance**.
+"""
+)
 
-st.sidebar.subheader("Activities")
-extra = st.sidebar.selectbox("Extracurricular Activities", ["Yes", "No"])
 
-if st.button("Predict Performance"):
+st.subheader("📝 Enter Student Details")
+
+with st.form("prediction_form"):
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        hours = st.number_input("Hours Studied", min_value=0, max_value=24, value=5)
+        prev_scores = st.number_input("Previous Scores", min_value=0, max_value=100, value=70)
+
+    with col2:
+        sleep = st.number_input("Sleep Hours", min_value=0, max_value=12, value=6)
+        papers = st.number_input("Sample Papers Practiced", min_value=0, max_value=20, value=3)
+
+    extra = st.selectbox("Extracurricular Activities", ["Yes", "No"])
+
+    predict_button = st.form_submit_button("Predict Performance 🚀")
     
-    st.subheader("Student performance Chart")
-    result = predict_performance(Hours_Studied, prev_scores, sleep, papers, extra)
+# Prediction Result Section
+if predict_button:
+
+    result = predict_performance(hours, prev_scores, sleep, papers, extra)
     student_grade = grade(result)
-    
-    st.subheader("Predicted Results")
-    st.write(f"Predicted Performance Index: {result}")
-    st.write(f"Grade: {student_grade}")
+
+    st.subheader("📊 Prediction Result")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric("Predicted Performance Index", result)
+
+    with col2:
+        st.metric("Grade", student_grade)
 
 # Plotting Graph using Plotly
 if st.button("Show Animated Grade Chart"):
