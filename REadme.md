@@ -56,7 +56,15 @@ student-performance-analyzer/
 │
 ├── app.py                 # Streamlit dashboard
 ├── model.py               # Linear Regression model logic
-├── StudentPerformance.csv # Dataset
+├── data/
+│   ├── readme.md                  # Dataset description
+│   └──StudentPerformance.csv      # Dataset
+│
+├── notebooks/
+│     │
+│     └── Student_Performance_Analysis.ipynb
+│
+│
 ├── requirements.txt
 └── README.md
 
